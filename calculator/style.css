@@ -1,0 +1,59 @@
+body {
+    background: linear-gradient(90deg, #e15584ea 0%, #daae51 100%);
+}
+
+#main-card {
+    text-align: center;
+    align-items: center;
+    margin: 250px auto;
+    width: 500px;
+    height: 730px;
+    background: linear-gradient(90deg, #e3054fc8 0%, #daae51 100%);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 0.5fr);
+    border-radius: 5px;
+    box-shadow: #e3054fc8 0px 10px 25px;
+}
+
+/* result view */
+#result-area {
+    text-align: center;
+    align-items: center;
+    height: 150px;
+    background-color: white;
+    display: grid;
+    grid-column: span 4;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+#buttons-area {
+    margin-left: 15px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+button {
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main-card">
+        <div id="result-area"> </div>
+        <div id="buttons-area">
+            <button onclick="clearResult()">AC</button>
+            <button onclick="operatorClick('%')">%</button>
+            <button onclick="operatorClick('C')">C</button>
+            <button onclick="operatorClick('/')">/</button>
+
+            <button onclick="numberClick(7)">7</button>
+            <button onclick="numberClick(8)">8</button>
+            <button onclick="numberClick(9)">9</button>
+            <button onclick="operatorClick('*')">X</button>
+
+            <button onclick="numberClick(4)">4</button>
+            <button onclick="numberClick(5)">5</button>
+            <button onclick="numberClick(6)">6</button>
+            <button onclick="operatorClick('-')">-</button>
+
+            <button onclick="numberClick(1)">1</button>
+            <button onclick="numberClick(2)">2</button>
+            <button onclick="numberClick(3)">3</button>
+            <button onclick="operatorClick('+')">+</button>
+
+            <button onclick="numberClick('00')">00</button>
+            <button onclick="numberClick(0)">00</button>
+            <button onclick="operatorClick('.')">.</button>
+            <button onclick="calcresult()">=</button>
+        </div>
+    </div>
+    <script src="script.js">
+
+    </script>
+</body>
+
+</html>

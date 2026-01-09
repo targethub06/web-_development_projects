@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main-card">
+        <h1
+            style="color: rgb(233, 59, 73); font-weight: bolder; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-shadow: crimson;">
+            Currency Converter</h1>
+        <div id="select-card">
+            <div id="from-card">
+                <label for="from">From:</label>
+                <select name="" id="from">
+                    <option value="USD">USD</option>
+                    <option value="Rupee">Rupee</option>
+                    <option value="Euro">Euro</option>
+                </select>
+            </div>
+
+            <div id="to-card">
+                <label for="to">To:</label>
+                <select name="" id="to">
+                    <option value="Rupee">Rupee</option>
+                    <option value="USD">USD</option>
+                    <option value="Euro">Euro</option>
+                </select>
+            </div>
+
+            <div id="input-card">
+                <input type="text" name="" id="text-input" placeholder="Enter your amount">
+            </div>
+
+            <div id="convert-card">
+                <button type="button" onclick=convertcurrency()>Convert</button>
+            </div>
+
+            <div id="result-area"></div>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
