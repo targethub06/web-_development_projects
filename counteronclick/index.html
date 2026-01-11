@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+            font-size: 50px;
+            background: linear-gradient(to right, rgb(0, 255, 119), rgb(0, 128, 107), black);
+            color: white;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #main-card {
+            margin: 250px auto;
+            width: 300px;
+            padding: 30px 30px 30px 30px;
+            height: 600px;
+            background: linear-gradient(to right, rgba(0, 255, 247, 0.767), rgba(0, 128, 0, 0.668), rgba(0, 0, 0, 0.504));
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-card">
+        <h2>COUNTER</h2>
+
+        <button onclick="CounterClick('inc')">Increment</button>
+        <button onclick="CounterClick('dec')">Decrement</button>
+
+        <div id="result-area">0</div>
+    </div>
+
+    <script>
+        let count = 0;
+        const result = document.getElementById("result-area");
+
+        function CounterClick(action) {
+            if (action === 'inc') {
+                count++;
+            } else if (action === 'dec') {
+                count--;
+            }
+            result.innerHTML = count;
+        }
+    </script>
+</body>
+
+</html>
