@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius-Farenheit Converter</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+        font-size: 20px;
+        background: linear-gradient(to right, rgb(0, 255, 119), rgb(0, 128, 107), black);
+        color: white;
+    }
+
+    #main-card {
+        margin: 150px auto;
+        width: 400px;
+        padding: 30px 30px 30px 30px;
+        height: 400px;
+        background: linear-gradient(to right, rgba(0, 255, 247, 0.767), rgba(0, 128, 0, 0.668), rgba(0, 0, 0, 0.504));
+        border-radius: 15px;
+    }
+
+    #user-input {
+        margin-top: 50px;
+    }
+
+    #user-temp-value {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    input[type="radio"] {
+        margin: 0 10px;
+    }
+
+    #convert-button {
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+
+<body>
+    <div id="main-card">
+        <h2>Celsius-Farenheit Converter</h2>
+        <div id="user-input">
+            <!-- select-option -->
+            <div id="user-selection">
+                <!--   input-field -->
+                <div id="user-temp-value">
+                    <label for="">Temperature</label>
+                    <input type="text" id="temp-value" placeholder="Enter Temperature">
+                </div>
+                <label for="">Convert to:</label>
+                <input type="radio" name="select" id="Celsius" checked>
+                <label for="Celsius">Celsius</label>
+
+                <input type="radio" name="select" id="Fahrenheit" checked>
+                <label for="Fahrenheit">Fahrenheit</label>
+            </div>
+
+            <!-- convert-button -->
+            <div id="convert-button">
+                <button onclick="convert()">Convert</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let cr = document.getElementById("Celsius");
+        let fr = document.getElementById("Fahrenheit");
+        let temp = Number(document.getElementById("temp-value").value);
+        checked = false;
+        function convert() {
+            if (cr.checked === true) {
+                let celsius = (temp - 32) * 5 / 9;
+                alert("Temperature in Celsius: " + celsius.toFixed(2) + " °C");
+            }
+            else if (fr.checked === true) {
+                let fahrenheit = (temp * 9 / 5) + 32;
+                alert("Temperature in Fahrenheit: " + fahrenheit.toFixed(2) + " °F");
+            }
+            else {
+                alert("Please select a conversion option.");
+            }
+        }
+    </script>
+</body>
+
+</html>
