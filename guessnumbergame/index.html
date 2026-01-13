@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Game</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    alert("Welcome to Number Game!");
+    alert("You have 3 chances to guess a number between 0-9.");
+    alert("Enjoy your turn!");
+
+    let target = Math.floor(Math.random() * 10);
+    let attempts = 3;
+
+    for (let i = 0; i < attempts; i++) {
+        let guess = prompt("Enter your guess:");
+
+        if (Number(guess) === target) {
+            alert("You win! The number was " + target);
+            break;
+        } else if (i < attempts - 1) {
+            alert("Wrong! Try again.");
+        } else {
+            alert("Game Over! The correct number was " + target);
+        }
+    }
+
+
+</script>
+
+</html>
