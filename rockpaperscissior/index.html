@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor game</title>
+</head>
+<style>
+    body {
+        background: linear-gradient(to right, rgb(199, 6, 112), rgb(4, 4, 4));
+        /* background-color: rgb(96, 32, 32); */
+        text-align: center;
+    }
+
+    #maincard,
+    h2 {
+        margin-top: 20px;
+        color: white;
+        font-size: 40px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+    }
+
+    #rock,
+    #paper,
+    #scissor {
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        padding: 20px 20px 20px 20px;
+        border-radius: 60px;
+        border: none;
+        outline: none;
+        margin: 5px 5px 5px 5px;
+    }
+
+    #reset-card {
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        padding: 20px 20px 20px 20px;
+        border-radius: 60px;
+        border: none;
+        outline: none;
+        text-align: center;
+    }
+
+    #rock:hover,
+    #paper:hover,
+    #scissor:hover {
+        background-color: rgb(79, 172, 158);
+    }
+
+    #result-area {
+        text-align: center;
+        color: rgb(5, 5, 5);
+        font-size: 30px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        margin-top: 20px;
+        background-color: aliceblue;
+        width: 300px;
+        margin: 50px auto;
+        padding: 40px 40px 40px 40px;
+    }
+</style>
+
+<body>
+    <h2>Rock Paper Scissor Game</h2>
+    <div class="main-card">
+        <button id="rock" onclick="play('👊')">👊</button>
+        <button id="paper" onclick="play('🖐️')">🖐️</button>
+        <button id="scissor" onclick="play('✌️')">✌️</button>
+        <button id="reset-card" onclick="resetGame()">Reset</button>
+
+        <div id="result-area"></div>
+    </div>
+    <script>
+        let moves = ["👊", "🖐️", "✌️"];
+
+        let cs = 0;
+        let us = 0;
+        let t = 0;
+        let result = document.getElementById("result-area")
+        function play(action) {
+            let rad = Math.floor(Math.random() * moves.length);
+            let computerMove = moves[rad]
+            if (action == computerMove) {
+                t++;
+                result.innerHTML = `
+                😐 Tie! (Total Ties: ${t}) <br>
+                You: ${action} | Computer: ${computerMove}
+            `;
+            }
+            else if (
+                (action == '👊' && computerMove == '✌️') ||
+                (action == '✌️' && computerMove == '🖐️') ||
+                (action == '🖐️' && computerMove == '👊')
+            ) {
+                us++;
+                // alert("Your Score:" + us);
+                result.innerHTML = `You Win! (Your Score: ${us}) <br> You: ${action} | Computer: ${computerMove}`;
+            }
+            else {
+                cs++;
+                result.innerHTML = ` Computer Wins! (Computer Score: ${cs}) <br> You: ${action} | Computer: ${computerMove}`;
+            }
+
+        }
+        function resetGame() {
+            us = 0;
+            cs = 0;
+            t = 0;
+            alert("Game reset!");
+            result.innerHTML = "";
+        }
+        function showResult(status, userMove, computerMove) {
+            result.innerHTML = `
+            <div>${status}</div>
+            <div>You: ${userMove} | Computer: ${computerMove}</div>
+            <div>Score — You: ${us} | Computer: ${cs} | Tie: ${t}</div>
+        `;
+        }
+
+    </script>
+</body>
+
+</html>
